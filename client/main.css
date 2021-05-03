@@ -2,3 +2,7 @@ body {
   padding: 10px;
   font-family: sans-serif;
 }
+
+.bg-dark {
+  background-color: #0092ac!important;
+}
