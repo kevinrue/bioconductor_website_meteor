@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button'
 export const BodyHeader = () => {
 
     return (
-        <Navbar className="color-nav">
+        <Navbar className="bioconductor-nav">
             <Navbar.Brand href="#home"><img src="logo/bioconductor.gif" height="100%" /></Navbar.Brand>
             <Nav className="mr-auto">
                 <Nav.Link href="#news">Latest News</Nav.Link>
