@@ -15,12 +15,12 @@ export const BodyHeader = () => {
 
     return (
         <Navbar className="bioconductor-nav">
-            <Navbar.Brand href="#home"><img src="logo/bioconductor.gif" height="100%" /></Navbar.Brand>
+            <Navbar.Brand href="/"><img src="logo/bioconductor.gif" height="100%" /></Navbar.Brand>
             
             <Nav className="mr-auto">
-                <Nav.Link href="#news">Latest News</Nav.Link>
-                <Nav.Link href="#packages">Packages</Nav.Link>
-                <Nav.Link href="#support">Support</Nav.Link>
+                <Nav.Link href="/news">Latest News</Nav.Link>
+                <Nav.Link href="/packages">Packages</Nav.Link>
+                <Nav.Link href="/support">Support</Nav.Link>
             </Nav>
             
             <Form inline>
