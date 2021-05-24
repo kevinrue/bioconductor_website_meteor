@@ -39,7 +39,11 @@ export const BodyHeader = () => {
                 </NavDropdown>
               </Fragment>
             ) : (
-              <LoginForm />
+              <Fragment>
+                <Nav className="justify-content-end">
+                    <Nav.Link href="/signin">Sign in</Nav.Link>
+                </Nav>
+              </Fragment>
             )}
 
         </Navbar>

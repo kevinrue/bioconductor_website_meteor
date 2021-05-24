@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import { BodyHeader } from './BodyHeader.jsx';
 import { BodyFooter } from './BodyFooter.jsx';
+import { LoginForm } from './LoginForm.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -32,6 +33,9 @@ export default class App extends Component {
 	  	          </Route>
 	  	          <Route path="/support">
 	  	            <h1>Support</h1>
+	  	          </Route>
+	  	          <Route path="/signin">
+	  	            <LoginForm />
 	  	          </Route>
 				  <Redirect strict from="/logout" to="/" />
 	  	        </Switch>
