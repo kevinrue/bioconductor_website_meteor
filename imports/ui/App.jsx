@@ -4,18 +4,19 @@ import { BodyFooter } from './BodyFooter.jsx';
 import { LoginForm } from './LoginForm.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
-  BrowserRouter as Router,
+  Router,
   Switch,
   Route,
   Link,
   Redirect
 } from "react-router-dom";
+import history from './history.jsx'
 
 export default class App extends Component {
 
 	render(){
 	  return(
-	  	    <Router>
+	  	    <Router history={history}>
 	  	      <div>
 	  	      	<BodyHeader />
 	  	
@@ -36,6 +37,9 @@ export default class App extends Component {
 	  	          </Route>
 	  	          <Route path="/signin">
 	  	            <LoginForm />
+	  	          </Route>
+	  	          <Route path="/profile">
+	  	            <h1>Your profile</h1>
 	  	          </Route>
 				  <Redirect strict from="/logout" to="/" />
 	  	        </Switch>

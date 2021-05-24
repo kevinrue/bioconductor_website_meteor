@@ -1,14 +1,25 @@
 import { Meteor } from 'meteor/meteor';
 import React, { useState } from 'react';
+import history from './history'
 
 export const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  function redirect_profile (e) {
+    console.log(e);
+    if (!e) {
+      console.log('yay!');
+      history.push('/profile');
+    } else {
+      console.log('nay!');
+    }
+  }
+
   const submit = e => {
     e.preventDefault();
 
-    Meteor.loginWithPassword(username, password);
+    Meteor.loginWithPassword(username, password, redirect_profile);
   };
 
   return (
