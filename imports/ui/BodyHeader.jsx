@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
@@ -30,10 +29,14 @@ export const BodyHeader = () => {
 
             {user ? (
               <Fragment>
-                {user.username} 
-                <div className="user" onClick={logout}>
-                  🚪
-                </div>
+                <NavDropdown alignRight title="Profile" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/profile">Signed in as <strong>{user.username}</strong></NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="/logout">
+                        <div className="user" onClick={logout}>
+                            Sign out
+                        </div></NavDropdown.Item>
+                </NavDropdown>
               </Fragment>
             ) : (
               <LoginForm />

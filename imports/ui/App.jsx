@@ -6,7 +6,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 
 export default class App extends Component {
@@ -32,6 +33,7 @@ export default class App extends Component {
 	  	          <Route path="/support">
 	  	            <h1>Support</h1>
 	  	          </Route>
+				  <Redirect strict from="/logout" to="/" />
 	  	        </Switch>
 
 	  	        <BodyFooter />

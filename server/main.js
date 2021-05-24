@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { LinksCollection } from '/imports/api/links';
 
-const SEED_USERNAME = 'meteorite';
+const SEED_USERNAME = 'bioconductor';
 const SEED_PASSWORD = 'password';
 
 Meteor.startup(() => {
