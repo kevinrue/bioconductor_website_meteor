@@ -1,17 +1,22 @@
-import React from 'react'
+import { Meteor } from 'meteor/meteor';
+import React from 'react';
+import { useTracker } from 'meteor/react-meteor-data';
+import { Redirect } from 'react-router-dom';
 
-const ProfilePage = () => {
+export const ProfilePage = () => {
   const user = useTracker(() => Meteor.user());
 
-  return (
-  	<h1>Profile</h1>
-  	<ul>
-  		<li>
-  			<strong>Username:</strong> {user.username}
-  			<strong>Password:</strong> ***************
-  		</li>
-  	</ul>
-}
+  if (!user) {
+  	return <Redirect to='/signin'/>;
+  }
 
-export default HomePage
-ProfilePage
+  return (
+  	<div>
+	  	<h1>Profile</h1>
+	  	<ul>
+	  		<li><strong>Username:</strong> {user.username}</li>
+	  		<li><strong>Password:</strong> ***************</li>
+	  	</ul>
+  	</div>
+  	)
+}

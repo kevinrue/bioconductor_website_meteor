@@ -1,13 +1,14 @@
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from 'meteor/react-meteor-data';
 import React, { Fragment } from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
-import { useTracker } from 'meteor/react-meteor-data';
 
 export const NavBar = () => {
     const user = useTracker(() => Meteor.user());
-    const logout = () => Meteor.logout();
+    const signout = () => Meteor.logout();
 
     console.log(user);
 
@@ -31,8 +32,8 @@ export const NavBar = () => {
                 <NavDropdown alignRight title="Profile" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/profile">Signed in as <strong>{user.username}</strong></NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="/logout">
-                        <div className="user" onClick={logout}>
+                    <NavDropdown.Item href="/signout">
+                        <div className="user" onClick={signout}>
                             Sign out
                         </div></NavDropdown.Item>
                 </NavDropdown>

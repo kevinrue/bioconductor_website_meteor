@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
-  Router,
+  BrowserRouter as Router,
   Switch,
   Route,
   Link,
@@ -9,14 +9,16 @@ import {
 } from "react-router-dom";
 import { NavBar } from '../components/NavBar.jsx';
 import { Footer } from '../components/Footer.jsx';
-import { LoginForm } from '../pages/LoginForm.jsx';
-import history from '../components/history.jsx';
+import { HomePage } from '../pages/HomePage.jsx';
+import { SigninForm } from '../pages/SigninForm.jsx';
+import { SignupForm } from '../pages/SignupForm.jsx';
+import { ProfilePage } from '../pages/ProfilePage.jsx';
 
 export default class App extends Component {
 
 	render(){
 	  return(
-	  	    <Router history={history}>
+	  	    <Router>
 	  	      <div>
 	  	      	<NavBar />
 	  	
@@ -24,7 +26,7 @@ export default class App extends Component {
 	  	            renders the first one that matches the current URL. */}
 	  	        <Switch>
 	  	          <Route exact path="/">
-	  	            <h1>Welcome to Bioconductor!</h1>
+	  	            <HomePage />
 	  	          </Route>
 	  	          <Route path="/news">
 	  	            <h1>Latest news</h1>
@@ -36,12 +38,15 @@ export default class App extends Component {
 	  	            <h1>Support</h1>
 	  	          </Route>
 	  	          <Route path="/signin">
-	  	            <LoginForm />
+	  	            <SigninForm />
+	  	          </Route>
+	  	          <Route path="/signup">
+	  	            <SignupForm />
 	  	          </Route>
 	  	          <Route path="/profile">
-	  	            <h1>Your profile</h1>
+	  	            <ProfilePage />
 	  	          </Route>
-				  <Redirect strict from="/logout" to="/" />
+				  <Redirect strict from="/signout" to="/" />
 	  	        </Switch>
 
 	  	        <Footer />

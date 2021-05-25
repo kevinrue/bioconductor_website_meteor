@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import '/imports/startup/server/Accounts';
+import { Accounts } from 'meteor/accounts-base';
 
 const SEED_USERNAME = 'bioconductor';
 const SEED_PASSWORD = 'password';
