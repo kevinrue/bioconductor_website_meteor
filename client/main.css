@@ -2,3 +2,42 @@ body {
   padding: 10px;
   font-family: sans-serif;
 }
+
+.bioconductor-nav {
+  background-color: #0092ac;
+}
+
+.bioconductor-nav .navbar-nav .nav-link {
+  color: #ffffff!important;
+  font-weight: bold!important;
+  font-size: 110%!important;
+}
+
+.bioconductor-nav .navbar-nav .nav-link:hover{
+  color: #c4d931!important;
+}
+
+.bioconductor-nav {
+  padding-left: 0.1rem!important;
+  padding-top: 0.1rem!important;
+  padding-bottom: 0.1rem!important;
+}
+
+.bioconductor-nav .navbar-brand {
+  padding: 0rem!important;
+}
+
+.bioconductor-nav .form-inline .btn-outline-info {
+  color: #ffffff!important;
+  border-color: #ffffff!important;
+}
+
+/* Dropdown menu */
+
+.nav-item > a {
+  color: white;
+}
+
+.nav-item > a:hover {
+  color: #c4d931;
+}
