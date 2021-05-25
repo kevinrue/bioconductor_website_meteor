@@ -8,10 +8,13 @@ export const LoginForm = () => {
 
   function redirect_profile (e) {
     console.log(e);
+    // Redirect to profile if there is no log in error
     if (!e) {
+      // TODO: replace by a cleaner way to redirect users
       console.log('yay!');
       history.push('/profile');
     } else {
+      // TODO: display an error message on failed login
       console.log('nay!');
     }
   }
