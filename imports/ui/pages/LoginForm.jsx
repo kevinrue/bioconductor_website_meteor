@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import React, { useState } from 'react';
-import history from './history'
+import history from '../components/history'
 
 export const LoginForm = () => {
   const [username, setUsername] = useState('');

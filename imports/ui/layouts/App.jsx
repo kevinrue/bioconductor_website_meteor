@@ -1,7 +1,4 @@
 import React, {Component, Fragment} from 'react';
-import { BodyHeader } from './BodyHeader.jsx';
-import { BodyFooter } from './BodyFooter.jsx';
-import { LoginForm } from './LoginForm.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Router,
@@ -10,7 +7,10 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
-import history from './history.jsx'
+import { BodyHeader } from '../pages/BodyHeader.jsx';
+import { BodyFooter } from '../pages/BodyFooter.jsx';
+import { LoginForm } from '../pages/LoginForm.jsx';
+import history from '../components/history.jsx';
 
 export default class App extends Component {
 
