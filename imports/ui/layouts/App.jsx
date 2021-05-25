@@ -7,8 +7,8 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
-import { BodyHeader } from '../pages/BodyHeader.jsx';
-import { BodyFooter } from '../pages/BodyFooter.jsx';
+import { NavBar } from '../components/NavBar.jsx';
+import { Footer } from '../components/Footer.jsx';
 import { LoginForm } from '../pages/LoginForm.jsx';
 import history from '../components/history.jsx';
 
@@ -18,7 +18,7 @@ export default class App extends Component {
 	  return(
 	  	    <Router history={history}>
 	  	      <div>
-	  	      	<BodyHeader />
+	  	      	<NavBar />
 	  	
 	  	        {/* A <Switch> looks through its children <Route>s and
 	  	            renders the first one that matches the current URL. */}
@@ -44,7 +44,7 @@ export default class App extends Component {
 				  <Redirect strict from="/logout" to="/" />
 	  	        </Switch>
 
-	  	        <BodyFooter />
+	  	        <Footer />
 	  	      </div>
 	  	    </Router>
 	  	  )
