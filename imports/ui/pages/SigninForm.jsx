@@ -38,7 +38,7 @@ export const SigninForm = () => {
           <Form onSubmit={submit}>
             <Segment stacked>
               <Form.Input
-                label="Email"
+                label="Username"
                 id="signin-form-username"
                 icon="user"
                 iconPosition="left"
