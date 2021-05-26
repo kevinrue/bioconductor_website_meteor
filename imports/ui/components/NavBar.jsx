@@ -10,11 +10,9 @@ export const NavBar = () => {
     const user = useTracker(() => Meteor.user());
     const signout = () => Meteor.logout();
 
-    console.log(user);
-
     return (
         <Navbar className="bioconductor-nav">
-            <Navbar.Brand href="/"><img src="logo/bioconductor.gif" height="100%" /></Navbar.Brand>
+            <Navbar.Brand href="/"><img src="/logo/bioconductor.gif" height="100%" /></Navbar.Brand>
             
             <Nav className="mr-auto">
                 <Nav.Link href="/news">Latest News</Nav.Link>

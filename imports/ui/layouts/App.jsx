@@ -10,9 +10,10 @@ import {
 import { NavBar } from '../components/NavBar.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { HomePage } from '../pages/HomePage.jsx';
-import { SigninForm } from '../pages/SigninForm.jsx';
-import { SignupForm } from '../pages/SignupForm.jsx';
+import { SigninPage} from '../pages/SigninPage.jsx';
+import { SignupPage } from '../pages/SignupPage.jsx';
 import { ProfilePage } from '../pages/ProfilePage.jsx';
+import { ListUsersPage } from '../pages/ListUsersPage.jsx';
 
 export default class App extends Component {
 
@@ -38,13 +39,16 @@ export default class App extends Component {
 	  	            <h1>Support</h1>
 	  	          </Route>
 	  	          <Route path="/signin">
-	  	            <SigninForm />
+	  	            <SigninPage />
 	  	          </Route>
 	  	          <Route path="/signup">
-	  	            <SignupForm />
+	  	            <SignupPage />
 	  	          </Route>
 	  	          <Route path="/profile">
 	  	            <ProfilePage />
+	  	          </Route>
+	  	          <Route path="/admin/users">
+	  	            <ListUsersPage />
 	  	          </Route>
 				  <Redirect strict from="/signout" to="/" />
 	  	        </Switch>

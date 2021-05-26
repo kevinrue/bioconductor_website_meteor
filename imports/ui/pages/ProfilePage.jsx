@@ -1,19 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
-import { useTracker } from 'meteor/react-meteor-data';
 import { Redirect } from 'react-router-dom';
+import { useAccount } from '../hooks/useAccount.jsx';
 
 export const ProfilePage = () => {
-  const { user, userId, isLoggingIn, isLoggedIn } = useTracker(() => {
-    const user = Meteor.user()
-    const userId = Meteor.userId()
-    const isLoggingIn = Meteor.loggingIn()
-    return {
-      user,
-      userId,
-      isLoggingIn
-    }
-  })
+  const { user, isLoggingIn } = useAccount();
 
   // If user is logged in, let them in
   if (user) {
