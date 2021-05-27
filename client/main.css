@@ -18,9 +18,9 @@ body {
 }
 
 .bioconductor-nav {
-  padding-left: 0.1rem!important;
-  padding-top: 0.1rem!important;
-  padding-bottom: 0.1rem!important;
+  padding-left: 0rem!important;
+  padding-top: 0rem!important;
+  padding-bottom: 0rem!important;
 }
 
 .bioconductor-nav .navbar-brand {
@@ -28,8 +28,8 @@ body {
 }
 
 .bioconductor-nav .form-inline .btn-outline-info {
-  color: #ffffff!important;
-  border-color: #ffffff!important;
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
 /* Dropdown menu */
