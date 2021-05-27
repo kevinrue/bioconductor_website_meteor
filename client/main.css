@@ -1,7 +1,11 @@
+/* Body */
+
 body {
   /*padding: 10px;*/
   font-family: sans-serif;
 }
+
+/* Navigation bar */
 
 .bioconductor-nav {
   background-color: #0092ac;
@@ -40,4 +44,34 @@ body {
 
 .nav-item > a:hover {
   color: #c4d931;
+}
+
+/* Footer */
+
+.page-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 230px;
+    /*line-height: 60px;*/
+    background-color: #0092ac;
+    color: #ffffff!important;
+}
+
+.page-footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.page-footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.page-footer a:hover {
+  color: #c4d931;
+}
+
+.page-footer ul {
+    list-style-type: none;
 }
