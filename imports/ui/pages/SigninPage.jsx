@@ -30,13 +30,17 @@ export const SigninPage = () => {
 
   return (
     <Container id="signin-page">
-      <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+      <Grid textAlign="center" verticalAlign="middle" centered>
         <Grid.Column>
+
           <Header as="h2" textAlign="center">
             Login to your account
           </Header>
+
           <Form onSubmit={submit}>
+
             <Segment stacked>
+
               <Form.Input
                 label="Username"
                 id="signin-form-username"
@@ -47,6 +51,7 @@ export const SigninPage = () => {
                 placeholder="Username"
                 onChange={e => setUsername(e.target.value)}
               />
+              <br/>
               <Form.Input
                 label="Password"
                 id="signin-form-password"
@@ -57,12 +62,17 @@ export const SigninPage = () => {
                 type="password"
                 onChange={e => setPassword(e.target.value)}
               />
+              <br/>
               <Form.Button id="signin-form-submit" content="Submit"/>
+
             </Segment>
+
           </Form>
+
           <Message>
             <Link to="/signup">Click here to Register</Link>
           </Message>
+
           {error === '' ? (
             ''
           ) : (
@@ -72,6 +82,7 @@ export const SigninPage = () => {
               content={error}
             />
           )}
+
         </Grid.Column>
       </Grid>
     </Container>
