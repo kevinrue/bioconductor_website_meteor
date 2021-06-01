@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { useAccount } from '../hooks/useAccount.jsx';
 
 export const ProfilePage = () => {
-  const { user, isLoggingIn } = useAccount();
+  const { user, isLoggingIn, username } = useAccount();
 
   // If user is logged in, let them in
   if (user) {
@@ -12,7 +12,7 @@ export const ProfilePage = () => {
       <div>
         <h1>Profile</h1>
         <ul>
-          <li><strong>Username:</strong> {user.username}</li>
+          <li><strong>User ID:</strong> {user._id}</li>
           <li><strong>Password:</strong> ***************</li>
         </ul>
       </div>

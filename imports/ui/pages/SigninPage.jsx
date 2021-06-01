@@ -24,6 +24,21 @@ export const SigninPage = () => {
     });
   };
 
+  const loginWithGithub = e => {
+    e.preventDefault();
+
+    const res = Meteor.loginWithGithub({
+      requestPermissions: []
+    }, (error) => {
+      if (error) {
+        setError(error.reason || 'Unknown error');
+        setSuccess(true);
+      }
+    });
+
+    console.log(res)
+  };
+
   if (success) {
     return <Redirect to='/profile'/>;
   }
@@ -64,6 +79,16 @@ export const SigninPage = () => {
               />
               <br/>
               <Form.Button id="signin-form-submit" content="Submit"/>
+
+            </Segment>
+
+          </Form>
+
+          <Form onSubmit={loginWithGithub}>
+
+            <Segment stacked>
+
+              <Form.Button id="signin-form-github" content="Sign in with GitHub"/>
 
             </Segment>
 
