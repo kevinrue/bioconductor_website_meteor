@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import { useTracker } from 'meteor/react-meteor-data';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 
 export const SigninPage = () => {
@@ -43,7 +44,7 @@ export const SigninPage = () => {
     return <Redirect to='/profile'/>;
   }
 
-  const github_signin_form = Accounts.loginServicesConfigured() ?
+  const github_signin_form = useTracker(() => Accounts.loginServicesConfigured() ?
     <Form onSubmit={loginWithGithub}>
 
       <Segment stacked>
@@ -52,7 +53,7 @@ export const SigninPage = () => {
 
       </Segment>
 
-    </Form> : '';
+    </Form> : '');
 
   return (
     <Container id="signin-page">
