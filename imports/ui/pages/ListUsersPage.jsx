@@ -1,7 +1,8 @@
-import { Meteor } from 'meteor/meteor';
 import React from 'react';
+import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { UsersCollection } from '/imports/api/UsersCollection';
+import { User } from '../components/User';
 
 export const ListUsersPage = () => {
 
@@ -14,7 +15,7 @@ export const ListUsersPage = () => {
       <h1>List of users</h1>
  
       <ul>
-        { users.map(user => <li key={user._id}>{user.username || user.profile.name}</li>) }
+        { users.map(user => <User key={ user._id } user = { user } />) }
       </ul>
     </div>
   );
