@@ -6,9 +6,17 @@ export const useAccount = () => useTracker(() => {
   const userId = Meteor.userId();
   const isLoggingIn = Meteor.loggingIn();
 
-  var username = (user === undefined) ? '...' : user.username;
-  var username_github = (user === undefined || user.profile === undefined) ? '...' : user.profile.name;
-  username = (username === undefined) ? username_github : username;
+  var username = undefined;
+
+  // password
+  if (user && user.username) {
+    username = user.username
+  }
+
+  // github
+  if (username === undefined && user && user.profile && user.profile.name) {
+    username = user.profile.name;
+  }
 
   return {
     user,

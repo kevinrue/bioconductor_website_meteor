@@ -3,10 +3,12 @@ import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { useAccount } from '../hooks/useAccount.jsx';
 
 export const SigninPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const { user } = useAccount();
 
   const submit = e => {
     e.preventDefault();
@@ -41,6 +43,7 @@ export const SigninPage = () => {
     </Form> : '');
 
   return (
+    user ? <Redirect to="/profile" /> :
     <Container id="signin-page">
       <Grid textAlign="center" verticalAlign="middle" centered>
         <Grid.Column>
