@@ -7,22 +7,11 @@ import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-rea
 export const SigninPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState(false);
 
   const submit = e => {
     e.preventDefault();
 
-    Meteor.loginWithPassword(username, password, (err) => {
-      // Redirect to profile if there is no log in error
-      if (err) {
-        setError(err.reason);
-        setSuccess(false);
-      } else {
-        setError('');
-        setSuccess(true);
-      }
-    });
+    Meteor.loginWithPassword(username, password);
   };
 
   const loginWithGithub = e => {
@@ -39,10 +28,6 @@ export const SigninPage = () => {
 
     console.log(res)
   };
-
-  if (success) {
-    return <Redirect to='/profile'/>;
-  }
 
   const github_signin_form = useTracker(() => Accounts.loginServicesConfigured() ?
     <Form onSubmit={loginWithGithub}>
@@ -101,16 +86,6 @@ export const SigninPage = () => {
           <Message>
             <Link to="/signup">Click here to Register</Link>
           </Message>
-
-          {error === '' ? (
-            ''
-          ) : (
-            <Message
-              error
-              header="Login was not successful"
-              content={error}
-            />
-          )}
 
         </Grid.Column>
       </Grid>
