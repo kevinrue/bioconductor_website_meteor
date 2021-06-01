@@ -43,6 +43,17 @@ export const SigninPage = () => {
     return <Redirect to='/profile'/>;
   }
 
+  const github_signin_form = Accounts.loginServicesConfigured() ?
+    <Form onSubmit={loginWithGithub}>
+
+      <Segment stacked>
+
+        <Form.Button id="signin-form-github" content="Sign in with GitHub"/>
+
+      </Segment>
+
+    </Form> : '';
+
   return (
     <Container id="signin-page">
       <Grid textAlign="center" verticalAlign="middle" centered>
@@ -84,15 +95,7 @@ export const SigninPage = () => {
 
           </Form>
 
-          <Form onSubmit={loginWithGithub}>
-
-            <Segment stacked>
-
-              <Form.Button id="signin-form-github" content="Sign in with GitHub"/>
-
-            </Segment>
-
-          </Form>
+          { github_signin_form }
 
           <Message>
             <Link to="/signup">Click here to Register</Link>
