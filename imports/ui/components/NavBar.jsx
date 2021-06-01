@@ -5,9 +5,10 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import { useAccount } from '../hooks/useAccount.jsx';
 
 export const NavBar = () => {
-    const user = useTracker(() => Meteor.user());
+    const { user } = useAccount();
     const signout = () => Meteor.logout();
 
     return (
