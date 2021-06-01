@@ -17,9 +17,9 @@ Meteor.startup(() => {
     {
       $set: {
         loginStyle: "popup",
-        clientId: "f8730d26d1ddf8cfdd05", // See table below for correct property name!
-        secret: "e95d87180c752244d48c0d90dd2203be2b31ad41",
-        redirect_uri: "http://localhost:3000/_oauth/github"
+        clientId: Meteor.settings.github.clientId, // See table below for correct property name!
+        secret: Meteor.settings.github.secret,
+        redirect_uri: Meteor.settings.github.redirect_uri
       }
     }
   );

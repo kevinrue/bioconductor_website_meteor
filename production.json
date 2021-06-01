@@ -1,0 +1,7 @@
+{
+  "github": {
+    "clientId": "f8730d26d1ddf8cfdd05",
+    "secret": "e95d87180c752244d48c0d90dd2203be2b31ad41",
+    "redirect_uri": "http://bioconductor.meteorapp.com/_oauth/github"
+  }
+}
