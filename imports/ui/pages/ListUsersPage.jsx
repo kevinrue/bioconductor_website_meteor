@@ -14,7 +14,7 @@ export const ListUsersPage = () => {
       <h1>List of users</h1>
  
       <ul>
-        { users.map(user => <li key="{user._id}">{user.username || user.profile.name}</li>) }
+        { users.map(user => <li key={user._id}>{user.username || user.profile.name}</li>) }
       </ul>
     </div>
   );
