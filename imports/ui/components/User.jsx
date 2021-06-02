@@ -1,5 +1,6 @@
 import React from 'react';
+import { getDisplayName } from '../hooks/useAccount';
  
 export const User = ({ user }) => {
-  return <li>{user._id}</li>
+  return <li>{ getDisplayName(user) }</li>
 };

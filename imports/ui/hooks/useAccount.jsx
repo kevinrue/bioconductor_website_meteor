@@ -1,11 +1,7 @@
 import React from 'react'
 import { useTracker } from 'meteor/react-meteor-data';
 
-export const useAccount = () => useTracker(() => {
-  const user = Meteor.user();
-  const userId = Meteor.userId();
-  const isLoggingIn = Meteor.loggingIn();
-
+export function getDisplayName(user) {
   var displayName = undefined;
 
   // password
@@ -17,6 +13,16 @@ export const useAccount = () => useTracker(() => {
   if (displayName === undefined && user && user.profile && user.profile.name) {
     displayName = user.profile.name;
   }
+
+  return(displayName)
+}
+
+export const useAccount = () => useTracker(() => {
+  const user = Meteor.user();
+  const userId = Meteor.userId();
+  const isLoggingIn = Meteor.loggingIn();
+
+  const displayName = getDisplayName(user);
 
   return {
     user,
