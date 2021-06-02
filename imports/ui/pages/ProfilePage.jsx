@@ -13,7 +13,6 @@ export const ProfilePage = () => {
         <h1>Profile</h1>
         <ul>
           <li><strong>Display name:</strong> { displayName }</li>
-          <li><strong>Password:</strong> ***************</li>
         </ul>
       </div>
     )
