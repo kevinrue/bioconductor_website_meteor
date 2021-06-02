@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import React, {Component, Fragment} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -30,27 +31,34 @@ export default class App extends Component {
 	  	            <HomePage />
 	  	          </Route>
 	  	          <Route path="/news">
+	  	          	{/* TODO: should be a real page itself. */}
 	  	            <h1>Latest news</h1>
 	  	          </Route>
 	  	          <Route path="/packages">
+	  	          	{/* TODO: should be a real page itself. */}
 	  	            <h1>Packages</h1>
 	  	          </Route>
 	  	          <Route path="/support">
+	  	          	{/* TODO: should be a real page itself. */}
 	  	            <h1>Support</h1>
 	  	          </Route>
 	  	          <Route path="/signin">
-	  	            <SigninPage />
+	  	          	{Meteor.userId() ? <Redirect to="/profile" /> : <SigninPage />}
 	  	          </Route>
 	  	          <Route path="/signup">
 	  	            <SignupPage />
 	  	          </Route>
+	  	        	{/* TODO: signout should be a real page that signs out and then redirects, if users navigate to the page directly themselves. */}
+				  			<Redirect strict from="/signout" to="/" />
 	  	          <Route path="/profile">
 	  	            <ProfilePage />
 	  	          </Route>
 	  	          <Route path="/admin/users">
 	  	            <ListUsersPage />
 	  	          </Route>
-				  <Redirect strict from="/signout" to="/" />
+	  	          <Route path="/_oauth/github">
+	  	          	{Meteor.userId() ? <Redirect to="/profile" /> : <Redirect to="/" />}
+	  	          </Route>
 	  	        </Switch>
 
 	  	        <Footer />

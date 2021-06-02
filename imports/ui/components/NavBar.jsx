@@ -5,9 +5,10 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import { useAccount } from '../hooks/useAccount.jsx';
 
 export const NavBar = () => {
-    const user = useTracker(() => Meteor.user());
+    const { user, displayName } = useAccount();
     const signout = () => Meteor.logout();
 
     return (
@@ -27,8 +28,8 @@ export const NavBar = () => {
 
             {user ? (
               <Fragment>
-                <NavDropdown alignRight title="Profile" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/profile">Signed in as <strong>{user.username}</strong></NavDropdown.Item>
+                <NavDropdown alignRight title="Signed in" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="/signout">
                         <div className="user" onClick={signout}>
