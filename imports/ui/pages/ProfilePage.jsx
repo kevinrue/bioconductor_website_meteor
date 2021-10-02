@@ -12,7 +12,7 @@ export const ProfilePage = () => {
       <div>
         <h1>Profile</h1>
         <ul>
-          <li><strong>Display name:</strong> { displayName }</li>
+          <li><strong>Display name:</strong> {displayName}</li>
         </ul>
       </div>
     )
@@ -22,6 +22,7 @@ export const ProfilePage = () => {
       return <Redirect to={location.pathname} />;
     } else {
       // If user is neither logged in nor logging in, redirect them to the signin page
+      // TODO: add some context so that the page displays "you need to sign in to access this page"
       return <Redirect to='/signin' />;
     }
   }
